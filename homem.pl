@@ -30,16 +30,44 @@ pai(alberto, joao).
 pai(fabricio, alberto).
 pai(jonatas, fabricio).
 
+
+mae(silvia, jose).
+mae(silvia, maria).
+
+%verifica quem é o pai de jose
+% pai(_1, jose)
+
+%verifica quantos filhos joao tem
+% pai(joao, _1)
+
 %condicao para ver se é irmao
 irmao(X, Y):-
     homem(X),
     pai(Z, X),
     pai(Z, Y),
     mae(Z1, X),
-    mae(Z1, Y).
+    mae(Z1, Y),
+    % garante que uma pessoa nao seja irma de si mesma
+    not(X = Y).
+
+gerou(X,Y):-
+    pai(X,Y).
+
+gerou(X,Y):-
+    mae(X,Y).
+
+ancentral(X,Y):-
+    gerou(X,Y).
+
+ancentral(X, Y):-
+    gerou(Z, Y),
+    ancentral(X, Z).
+
 
 
 %assertz insere no final da base de dados
 % assertz(homem(luan)).
 
 %listing serve para lista todos da sua base de conhecimento
+
+%redo ou ; comeca o backtracking em prolog
