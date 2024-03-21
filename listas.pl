@@ -12,5 +12,5 @@ soma_lista([], 0). %caso base: a soma de uma lista vazia é 0
 soma_lista([Cabeca | Cauda], Soma):-  %passo recursivo
     soma_lista(Cauda, SomaCauda), % calcula a soma da cauda recursivamente.
     Soma is Cabeca + SomaCauda. % soma a cabeca com a soma da cauda para obter o total.
-
+    
     % is é um operador que é usado para avaliar a soma do lado direito e atribuir a variavel do lado esquerdo
