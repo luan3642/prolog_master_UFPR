@@ -1,5 +1,7 @@
-soma_valores([], 0). % caso base a soma de uma lista vazia é 0
+lista_subtrai([],0). %caso base
 
-soma_valores([Head | Tail], Result):-
-    soma_valores(Tail, TailSum),
-    Result is Head + TailSum.
+lista_subtrai([Head | Tail], Result):-
+    lista_subtrai(Tail, SubTraiCauda),
+    Result is Head - SubTraiCauda.
+
+%[5,2,1]
