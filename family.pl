@@ -3,11 +3,13 @@ homem(luan).
 homem(lourival).
 homem(deive).
 homem(thomas).
+homem(orlando).
 % vamos comecar definindo as mulheres
 mulher(maria).
 mulher(lorrany).
 mulher(caroline).
 mulher(tatiane).
+
 
 %definir predicado casado.
 married(lourival, maria).
@@ -24,6 +26,13 @@ parent(lourival, deive).
 parent(maria, luan).
 parent(maria, lorrany).
 parent(maria, deive).
+parent(orlando, tatiane).
+parent(tatiane, thomas).
+
+grandparent(X,Z):-
+    parent(X, Y),
+    parent(Y, Z).
+    
 
 
 irmaos(X,Y):-
