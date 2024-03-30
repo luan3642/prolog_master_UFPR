@@ -12,5 +12,14 @@ author('Aldous Huxley', 'dystopian').
 search_genre_book(X):-
     author(Y, X),
     book_title(Z, Y),
-    write(Z).
+    write(Z), nl, fail.
+search_genre_book(_).
+
+search_author_book(Author):-
+    book_title(Title, Author),
+    write(Title), nl, 
+    fail.
+search_author_book(_).
+
+
 
