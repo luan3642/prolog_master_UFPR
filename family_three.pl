@@ -14,12 +14,17 @@ mae(maria, lorrany).
 mae(maria, luan).
 mae(maria, deive).
 
+noivos(luan, caroline).
+
+engajed(X,Y):- noivos(X, Y).
+engajed(X,Y):- noivos(Y, X).
+
 
 irmaos(X, Y):-
     pai(P, X),
     pai(P, Y),
     mae(M, X),
-    mae(M, Y).
+    mae(M, Y),
     X \= Y.
 
 
